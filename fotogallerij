@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foto Gallery In The World</title>
+  <link rel="stylesheet" href="fotogallerij.css">
+</head>
+
+
+<body>
+  <h1>Image Gallery</h1>
+  <h2>Tourist Attractions In The World</h2>
+  <div class="gallery">
+    <ul>
+      <li><a href=""><img src="https://www.fodors.com/wp-content/uploads/2018/10/HERO_UltimateRome_Hero_shutterstock789412159.jpg" alt="just an exercise image">
+          <h3 class="place-title">Colosseum - Roma</h3>
+        </a>
+      </li>
+      <li><a href=""><img src="https://th-thumbnailer.cdn-si-edu.com/eBP1w0wGm1n7tZ4XtovPdnvxDOg=/800x800/filters:focal(1471x1061:1472x1062)/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer/b6/30/b630b48b-7344-4661-9264-186b70531bdc/istock-478831658.jpg" alt="just an exercise image">
+          <h3 class="place-title">Taj Mahal - Agra</h3>
+        </a></li>
+      <li><a href=""><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Tour_Eiffel_Wikimedia_Commons_%28cropped%29.jpg/800px-Tour_Eiffel_Wikimedia_Commons_%28cropped%29.jpg" alt="just an exercise image">
+          <h3 class="place-title">Eiffeltoren - Parijs</h3>
+        </a></li>
+      <li><a href=""><img src="https://exodus-website.s3.amazonaws.com/uploads/2021/12/34508-1024x676.jpg" alt="just an exercise image">
+          <h3 class="place-title">Chinese Muur - China</h3>
+        </a></li>
+      <li><a href=""><img src="https://www.worldatlas.com/upload/f4/d8/7b/shutterstock-1397031029.jpg" alt="just an exercise image">
+          <h3 class="place-title">Vrijheidsbeeld - de Verenigde Staten</h3>
+        </a></li>
+      <li><a href=""><img src="https://images.memphistours.com/large/292849827_giza%20pyramids%20(4).jpg" alt="just an exercise image">
+          <h3 class="place-title">Piramide van Cheops - Egypte </h3>
+        </a></li>
+    </ul>
+
+  </div>
+
+</body>
+
+</html>
