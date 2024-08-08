@@ -1,3 +1,4 @@
+const GameName = "Color Changing Box";
 let box = [
     [1, 1, 1], 
     [1, 1, 1],
@@ -5,6 +6,7 @@ let box = [
 ];
 
 window.onload = function () {
+    document.getElementById("title").innerHTML = GameName;
     draw_box(box); 
 }
 
