@@ -1,5 +1,5 @@
 const GameName = "Color Changing Box";
-let box = [
+let my_box = [
     [1, 1, 1], 
     [1, 1, 1],
     [1, 1, 1]
@@ -7,7 +7,7 @@ let box = [
 
 window.onload = function () {
     document.getElementById("title").innerHTML = GameName;
-    draw_box(box); 
+    draw_box(my_box); 
 }
 
 function draw_box(box) {
@@ -38,8 +38,8 @@ function generate_box_html(box) {
 function square_click_handler(cell) {
     let col = cell.cellIndex;
     let row = cell.parentNode.rowIndex;
-    change_color(box, row, col);
-    draw_box(box);
+    change_color(my_box, row, col);
+    draw_box(my_box);
 }
 
 let change_color = (box, row, col) => {
