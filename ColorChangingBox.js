@@ -55,3 +55,36 @@ let game_colors = function(){
     return "green and red";
     };
 let description = `There are ${game_colors()} colors in the game.`;
+
+function change_color_of_box(event){
+    event.preventDefault();
+  
+    let ColorNumber = document.getElementById('ColorNumber').value;
+    if(ColorNumber == 1){
+        draw_green_box(my_box);
+    }else if(ColorNumber == 2){
+        draw_red_box(my_box);
+    }else {
+        alert("Name must be 1 or 2");
+    }
+}
+
+function draw_green_box(box){
+    for (let i = 0; i < box.length; i++) {
+        for (let j = 0; j < box[i].length; j++) {
+            box[i][j] = 1;
+        }
+    }
+    draw_box(box);
+}
+function draw_red_box(box){
+    for (let i = 0; i < box.length; i++) {
+        for (let j = 0; j < box[i].length; j++) {
+            box[i][j] = 2;
+        }
+    }
+    draw_box(box);
+}
+  
+const form = document.getElementById('form');
+form.addEventListener('submit', change_color_of_box);
