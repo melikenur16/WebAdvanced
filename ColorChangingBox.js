@@ -7,7 +7,8 @@ let my_box = [
 
 window.onload = function () {
     document.getElementById("title").innerHTML = GameName;
-    draw_box(my_box); 
+    draw_box(my_box);
+    document.getElementById("description").innerHTML = description;
 }
 
 function draw_box(box) {
@@ -49,3 +50,8 @@ let change_color = (box, row, col) => {
             box[row][col] = 1;
         }
 }
+
+let game_colors = function(){
+    return "green and red";
+    };
+let description = `There are ${game_colors()} colors in the game.`;
