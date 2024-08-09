@@ -20,16 +20,16 @@ table {
 
 .greenbox {
     background-color: rgb(155, 246, 155);
-    border-color: rgb(100, 100, 100) ;
+    border-color: rgb(100, 100, 100);
     border-style: solid;
-    width: 100px; 
+    width: 100px;
     height: 100px;
 }
 
 .redbox {
     background-color: rgb(193, 50, 50);
-    border-color: rgb(100, 100, 100) ;
+    border-color: rgb(100, 100, 100);
     border-style: solid;
-    width: 100px; 
+    width: 100px;
     height: 100px;
 }

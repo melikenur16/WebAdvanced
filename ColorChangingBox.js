@@ -1,6 +1,6 @@
 const GameName = "Color Changing Box";
 let my_box = [
-    [1, 1, 1], 
+    [1, 1, 1],
     [1, 1, 1],
     [1, 1, 1]
 ];
@@ -28,7 +28,7 @@ function generate_box_html(box) {
                 row_html += "<td class=\"redbox\"and onclick='square_click_handler(this)'></td>";
             }
         }
-            
+
         row_html += "</tr>";
         box_inner_html += row_html;
     }
@@ -46,30 +46,32 @@ function square_click_handler(cell) {
 let change_color = (box, row, col) => {
     if (box[row][col] == 1) {
         box[row][col] = 2;
-        } else {
-            box[row][col] = 1;
-        }
+    } else {
+        box[row][col] = 1;
+    }
 }
 
-let game_colors = function(){
+let game_colors = function () {
     return "green and red";
-    };
-let description = `There are ${game_colors()} colors in the game.`;
+};
+let description = `There are small boxes inside a box above. 
+                    Each box you click will turn red if it is green, and green if it is red.
+                    There are only ${game_colors()} colors in the game.`;
 
-function change_color_of_box(event){
+function change_color_of_box(event) {
     event.preventDefault();
-  
+
     let ColorNumber = document.getElementById('ColorNumber').value;
-    if(ColorNumber == 1){
+    if (ColorNumber == 1) {
         draw_green_box(my_box);
-    }else if(ColorNumber == 2){
+    } else if (ColorNumber == 2) {
         draw_red_box(my_box);
-    }else {
+    } else {
         alert("Name must be 1 or 2");
     }
 }
 
-function draw_green_box(box){
+function draw_green_box(box) {
     for (let i = 0; i < box.length; i++) {
         for (let j = 0; j < box[i].length; j++) {
             box[i][j] = 1;
@@ -77,7 +79,7 @@ function draw_green_box(box){
     }
     draw_box(box);
 }
-function draw_red_box(box){
+function draw_red_box(box) {
     for (let i = 0; i < box.length; i++) {
         for (let j = 0; j < box[i].length; j++) {
             box[i][j] = 2;
@@ -85,6 +87,6 @@ function draw_red_box(box){
     }
     draw_box(box);
 }
-  
+
 const form = document.getElementById('form');
 form.addEventListener('submit', change_color_of_box);
