@@ -28,3 +28,10 @@ function click_handler(attraction) {
                        City of attraction: ${city}`;
     document.getElementById("information").innerHTML = information;
 }
+
+const SevenWondersAncientWorld = ['Great Pyramid of Giza','Hanging Gardens of Babylon', ' Temple of Artemis', ' Statue of Zeus at Olympia', '  Mausoleum at Halicarnassus', 'Colossus of Rhodes', 'Lighthouse of Alexandria'];
+const SevenWondersMiddleAges = ['Catacombs of Kom El Shoqafa','Colosseum', 'Great Wall of China','Hagia Sophia','Leaning Tower of Pisa','Porcelain Tower of Nanjing','Stonehenge'];
+
+const AllWonders = [...SevenWondersAncientWorld, ...SevenWondersMiddleAges];
+
+document.getElementById("AllWonders").innerHTML = AllWonders;
