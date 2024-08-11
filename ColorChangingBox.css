@@ -33,3 +33,7 @@ table {
     width: 100px;
     height: 100px;
 }
+
+#color_check_status, #color_of_boxes {
+    display: inline;
+}

@@ -20,7 +20,6 @@ function draw_box(box) {
 function generate_box_html(box) {
     let box_inner_html = "";
     for (let i = 0; i < box.length; i++) {
-
         let row_html = "<tr>";
         for (let j = 0; j < box[i].length; j++) {
             if (box[i][j] == 1) {
@@ -29,15 +28,13 @@ function generate_box_html(box) {
                 row_html += "<td class=\"redbox\"and onclick='square_click_handler(this)'></td>";
             }
         }
-
         row_html += "</tr>";
         box_inner_html += row_html;
     }
-
     return `<table>${box_inner_html}</table>`;
 }
 
-let color_of_boxes = 'Not all boxes are red yet.';
+let color_of_boxes = '';
 
 function square_click_handler(cell) {
     let col = cell.cellIndex;
@@ -58,13 +55,13 @@ let change_color = (box, row, col) => {
 let game_colors = function () {
     return "green and red";
 };
+
 let description = `There are small boxes inside a box above. 
                     Each box you click will turn red if it is green, and green if it is red.
                     There are only ${game_colors()} colors in the game.`;
 
 function change_color_of_box(event) {
     event.preventDefault();
-
     let ColorNumber = document.getElementById('ColorNumber').value;
     if (ColorNumber == 1) {
         draw_green_box(my_box);
@@ -73,7 +70,6 @@ function change_color_of_box(event) {
     } else {
         alert("Name must be 1 or 2");
     }
-
     check_color();
 }
 
@@ -85,6 +81,7 @@ function draw_green_box(box) {
     }
     draw_box(box);
 }
+
 function draw_red_box(box) {
     for (let i = 0; i < box.length; i++) {
         for (let j = 0; j < box[i].length; j++) {
@@ -102,19 +99,23 @@ let check_color = () => {
         for (let i = 0; i < my_box.length; i++) {
             for (let j = 0; j < my_box[i].length; j++) {
                 if (my_box[i][j] !== 2) {
-                    reject(false);
+                    reject('No, Not all boxes are red yet.');
                     return;
                 }
             }
         }
-        resolve(true);
+        resolve('Yes, All boxes are red!');
     });
 
-    check_all_red.then(() => {
-        color_of_boxes = 'All boxes are red!';
-        document.getElementById("color_of_boxes").innerHTML = color_of_boxes;
-    }).catch(() => {
-        color_of_boxes = 'Not all boxes are red yet.';
-        document.getElementById("color_of_boxes").innerHTML = color_of_boxes;
-    });
-}
+    check_all_red
+        .finally(() => {
+            document.getElementById("color_check_status").innerHTML = "Are all the boxes red?:";
+        })
+        .then(result => {
+            document.getElementById("color_of_boxes").innerHTML = result;
+        })
+        .catch(error => {
+            document.getElementById("color_of_boxes").innerHTML = error;
+        });
+};
+
