@@ -5,10 +5,11 @@ let my_box = [
     [1, 1, 1]
 ];
 
-window.onload = function () {
+window.onload = () => {
     document.getElementById("title").innerHTML = GameName;
     draw_box(my_box);
     document.getElementById("description").innerHTML = description;
+    document.getElementById("color_of_boxes").innerHTML = color_of_boxes;
 }
 
 function draw_box(box) {
@@ -36,11 +37,14 @@ function generate_box_html(box) {
     return `<table>${box_inner_html}</table>`;
 }
 
+let color_of_boxes = 'Not all boxes are red yet.';
+
 function square_click_handler(cell) {
     let col = cell.cellIndex;
     let row = cell.parentNode.rowIndex;
     change_color(my_box, row, col);
     draw_box(my_box);
+    check_color();
 }
 
 let change_color = (box, row, col) => {
@@ -69,6 +73,8 @@ function change_color_of_box(event) {
     } else {
         alert("Name must be 1 or 2");
     }
+
+    check_color();
 }
 
 function draw_green_box(box) {
@@ -90,3 +96,25 @@ function draw_red_box(box) {
 
 const form = document.getElementById('form');
 form.addEventListener('submit', change_color_of_box);
+
+let check_color = () => {
+    let check_all_red = new Promise((resolve, reject) => {
+        for (let i = 0; i < my_box.length; i++) {
+            for (let j = 0; j < my_box[i].length; j++) {
+                if (my_box[i][j] !== 2) {
+                    reject(false);
+                    return;
+                }
+            }
+        }
+        resolve(true);
+    });
+
+    check_all_red.then(() => {
+        color_of_boxes = 'All boxes are red!';
+        document.getElementById("color_of_boxes").innerHTML = color_of_boxes;
+    }).catch(() => {
+        color_of_boxes = 'Not all boxes are red yet.';
+        document.getElementById("color_of_boxes").innerHTML = color_of_boxes;
+    });
+}
