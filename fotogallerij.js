@@ -35,3 +35,11 @@ const SevenWondersMiddleAges = ['Catacombs of Kom El Shoqafa','Colosseum', 'Grea
 const AllWonders = [...SevenWondersAncientWorld, ...SevenWondersMiddleAges];
 
 document.getElementById("AllWonders").innerHTML = AllWonders;
+
+const TouristAttractionsBelgium = ['Gravensteen', 'Basilica of the Holy Blood', 'Citadelle de Dinant', 'Bouillon Castle', 'Grand Place', 'Mini-Europe', 'Atomium'];
+
+const [GhentAttraction1, BrugesAttraction1, DinantAttraction1, BouillonAttraction1, ...BrusselsAttractions] = TouristAttractionsBelgium;
+
+document.getElementById("TouristAttractionsBelgium").innerHTML = TouristAttractionsBelgium;
+document.getElementById("BrusselsAttractions").innerHTML = BrusselsAttractions;
+
