@@ -36,7 +36,7 @@ let AllWonders;
 
 document.getElementById("AllWonders").innerHTML = AllWonders;
 
-const TouristAttractionsBelgium = ['Gravensteen', 'Basilica of the Holy Blood', 'Citadelle de Dinant', 'Bouillon Castle', 'Grand Place', 'Mini-Europe', 'Atomium'];
+const TouristAttractionsBelgium = ['Gravensteen', 'Basilica of the Holy Blood', 'Citadelle de Dinant', 'Bouillon Castle', 'Grand Place', 'Manneken Pis', 'Atomium'];
 
 const [GhentAttraction1, BrugesAttraction1, DinantAttraction1, BouillonAttraction1, ...BrusselsAttractions] = TouristAttractionsBelgium;
 
@@ -52,3 +52,15 @@ array_connect(SevenWondersAncientWorld, SevenWondersMiddleAges).then(
         AllWonders = result;
         document.getElementById("AllWonders").innerHTML = AllWonders;
     });
+
+async function click_more_attractions_button() {
+    let getMoreAttractions = new Promise((resolve, reject) => {
+        setTimeout(() => resolve(['Royal Palace of Brussels', 'Royal Gallery of Saint Hubert', 'Mount of the Arts', 'Mini-Europe']), 1000)
+    });
+
+    let moreAttractions = await getMoreAttractions;
+    document.getElementById("MoreAttractions").innerHTML = `More tourist attractions in Brussels are: ${moreAttractions} .`;
+
+}
+
+document.getElementById("MoreAttractionsButton").addEventListener("click",  () => click_more_attractions_button());
