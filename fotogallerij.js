@@ -53,14 +53,13 @@ array_connect(SevenWondersAncientWorld, SevenWondersMiddleAges).then(
         document.getElementById("AllWonders").innerHTML = AllWonders;
     });
 
-async function click_more_attractions_button() {
-    let getMoreAttractions = new Promise((resolve, reject) => {
+(async function more_attractions_brussels() {
+    let getMoreAttractions = new Promise((resolve) => {
         setTimeout(() => resolve(['Royal Palace of Brussels', 'Royal Gallery of Saint Hubert', 'Mount of the Arts', 'Mini-Europe']), 1000)
     });
 
     let moreAttractions = await getMoreAttractions;
     document.getElementById("MoreAttractions").innerHTML = `More tourist attractions in Brussels are: ${moreAttractions} .`;
 
-}
+})();
 
-document.getElementById("MoreAttractionsButton").addEventListener("click",  () => click_more_attractions_button());

@@ -16,9 +16,3 @@ p, #AllWonders, #TouristAttractionsBelgium, #BrusselsAttractions {
   color: #000000;
   line-height: 1;
 }
-
-button {
-  display: block;
-  border-radius: 9px;
-  color: rgb(0, 0, 0);
-}
