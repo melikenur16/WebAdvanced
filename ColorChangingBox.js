@@ -41,7 +41,9 @@ function square_click_handler(cell) {
     let row = cell.parentNode.rowIndex;
     change_color(my_box, row, col);
     draw_box(my_box);
-    check_color();
+    check_color((result) => {
+        document.getElementById("color_of_boxes").innerHTML = result;
+    });
 }
 
 let change_color = (box, row, col) => {
@@ -68,9 +70,11 @@ function change_color_of_box(event) {
     } else if (ColorNumber == 2) {
         draw_red_box(my_box);
     } else {
-        alert("Name must be 1 or 2");
+        alert("Number must be 1 or 2");
     }
-    check_color();
+    check_color((result) => {
+        document.getElementById("color_of_boxes").innerHTML = result;
+    });
 }
 
 function draw_green_box(box) {
@@ -94,7 +98,7 @@ function draw_red_box(box) {
 const form = document.getElementById('form');
 form.addEventListener('submit', change_color_of_box);
 
-let check_color = () => {
+function check_color(callback) {
     let check_all_red = new Promise((resolve, reject) => {
         for (let i = 0; i < my_box.length; i++) {
             for (let j = 0; j < my_box[i].length; j++) {
@@ -112,10 +116,9 @@ let check_color = () => {
             document.getElementById("color_check_status").innerHTML = "Are all the boxes red?:";
         })
         .then(result => {
-            document.getElementById("color_of_boxes").innerHTML = result;
+            callback(result);
         })
         .catch(error => {
-            document.getElementById("color_of_boxes").innerHTML = error;
+            callback(error);
         });
-};
-
+}
