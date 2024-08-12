@@ -29,10 +29,10 @@ function click_handler(attraction) {
     document.getElementById("information").innerHTML = information;
 }
 
-const SevenWondersAncientWorld = ['Great Pyramid of Giza','Hanging Gardens of Babylon', ' Temple of Artemis', ' Statue of Zeus at Olympia', '  Mausoleum at Halicarnassus', 'Colossus of Rhodes', 'Lighthouse of Alexandria'];
-const SevenWondersMiddleAges = ['Catacombs of Kom El Shoqafa','Colosseum', 'Great Wall of China','Hagia Sophia','Leaning Tower of Pisa','Porcelain Tower of Nanjing','Stonehenge'];
+const SevenWondersAncientWorld = ['Great Pyramid of Giza', 'Hanging Gardens of Babylon', ' Temple of Artemis', ' Statue of Zeus at Olympia', '  Mausoleum at Halicarnassus', 'Colossus of Rhodes', 'Lighthouse of Alexandria'];
+const SevenWondersMiddleAges = ['Catacombs of Kom El Shoqafa', 'Colosseum', 'Great Wall of China', 'Hagia Sophia', 'Leaning Tower of Pisa', 'Porcelain Tower of Nanjing', 'Stonehenge'];
 
-const AllWonders = [...SevenWondersAncientWorld, ...SevenWondersMiddleAges];
+let AllWonders;
 
 document.getElementById("AllWonders").innerHTML = AllWonders;
 
@@ -43,3 +43,12 @@ const [GhentAttraction1, BrugesAttraction1, DinantAttraction1, BouillonAttractio
 document.getElementById("TouristAttractionsBelgium").innerHTML = TouristAttractionsBelgium;
 document.getElementById("BrusselsAttractions").innerHTML = BrusselsAttractions;
 
+async function array_connect(first_array, second_array) {
+    return [...first_array, ...second_array];
+}
+
+array_connect(SevenWondersAncientWorld, SevenWondersMiddleAges).then(
+    result => {
+        AllWonders = result;
+        document.getElementById("AllWonders").innerHTML = AllWonders;
+    });
