@@ -1,6 +1,6 @@
 document.querySelector(".Colosseum").src = "https://www.fodors.com/wp-content/uploads/2018/10/HERO_UltimateRome_Hero_shutterstock789412159.jpg";
-document.querySelector(".Taj_Mahal").src = "https://th-thumbnailer.cdn-si-edu.com/eBP1w0wGm1n7tZ4XtovPdnvxDOg=/800x800/filters:focal(1471x1061:1472x1062)/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer/b6/30/b630b48b-7344-4661-9264-186b70531bdc/istock-478831658.jpg";
-document.querySelector(".Eiffel_Tower").src = "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Tour_Eiffel_Wikimedia_Commons_%28cropped%29.jpg/800px-Tour_Eiffel_Wikimedia_Commons_%28cropped%29.jpg";
+document.querySelector(".Taj_Mahal").src = "https://media.istockphoto.com/id/519330110/tr/foto%C4%9Fraf/taj-mahal-agra-india-monument-of-love-in-blue-sky.jpg?s=612x612&w=0&k=20&c=kAPnLgItMrC8pSZoSdMTYCDj3E9Qk_ZPwW0LG1JARbc=";
+document.querySelector(".Eiffel_Tower").src = "https://media.tacdn.com/media/attractions-splice-spp-674x446/12/2e/16/f8.jpg";
 document.querySelector(".Great_Wall_of_China").src = "https://exodus-website.s3.amazonaws.com/uploads/2021/12/34508-1024x676.jpg";
 document.querySelector(".Statue_of_Liberty").src = "https://www.worldatlas.com/upload/f4/d8/7b/shutterstock-1397031029.jpg";
 document.querySelector(".Giza_pyramid_complex").src = "https://images.memphistours.com/large/292849827_giza%20pyramids%20(4).jpg";
@@ -63,3 +63,23 @@ array_connect(SevenWondersAncientWorld, SevenWondersMiddleAges).then(
 
 })();
 
+let result;
+let baseurl = 'https://raw.githubusercontent.com/melikenur16/WebAdvanced/main/ImportantCities.json';
+
+let fetchCities = async () => {
+    let response = await fetch(baseurl);
+    result = await response.json();
+
+    let citiesHTML = '';
+    for (let city of result) {
+        citiesHTML += `
+            <div class="city">
+                <img src="${city.image}" alt="img${city.name.replace(/ /g, '')}">
+                <p>City: ${city.name}<br>Country: ${city.country}</p>
+            </div>
+        `;
+    }
+    document.getElementById('ImportantCities').innerHTML = citiesHTML;
+};
+
+fetchCities();

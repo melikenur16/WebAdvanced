@@ -6,12 +6,12 @@ body {
 img {
   width: 300px;
   height: 200px;
+  border-radius: 10px;
 }
 
 #information {
   font-weight: bold;
   color: #000000;
-  line-height: 1;
 }
 
 p,
@@ -20,5 +20,21 @@ p,
 #BrusselsAttractions {
   display: inline;
   color: #000000;
-  line-height: 1;
+}
+
+#ImportantCities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.city {
+  text-align: center;
+  width: 300px;
+}
+
+.city img {
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
 }
