@@ -3,7 +3,10 @@ body {
   font-size: 15px;
 }
 
-img{width: 300px;height: 200px;}
+img {
+  width: 300px;
+  height: 200px;
+}
 
 #information {
   font-weight: bold;
@@ -11,7 +14,10 @@ img{width: 300px;height: 200px;}
   line-height: 1;
 }
 
-p, #AllWonders, #TouristAttractionsBelgium, #BrusselsAttractions {
+p,
+#AllWonders,
+#TouristAttractionsBelgium,
+#BrusselsAttractions {
   display: inline;
   color: #000000;
   line-height: 1;

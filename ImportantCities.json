@@ -1,0 +1,27 @@
+[
+    {
+        "name": "Amsterdam",
+        "country": "Netherlands",
+        "image": "https://i.ytimg.com/vi/ZeIHqebj4fo/maxresdefault.jpg"
+    },
+    {
+        "name": "Berlin",
+        "country": "Germany",
+        "image": "https://i.natgeofe.com/n/9e138c12-712d-41d4-9be9-5822a3251b5a/brandenburggate-berlin-germany.jpg"
+    },
+    {
+        "name": "London",
+        "country": "United Kingdom",
+        "image": "https://www.tourist-destinations.com/wp-content/uploads/2011/06/london-2.jpg"
+    },
+    {
+        "name": "Madrid",
+        "country": "Spain",
+        "image": "https://www.brusselsairlines.com/aircore/cache/images/67337/eyJpZGVudGlmaWVyIjoyOTI1LCJ0eXBlIjoiYXNzZXQifQ==_2.webp"
+    },
+    {
+        "name": "Zurich",
+        "country": "Sweden",
+        "image": "https://www.railbookers.co.uk/sites/railbookers/files/styles/hero/public/images/Zurich-City-Center.jpg?h=82f92a78&itok=6jd8Pf5m"
+    }
+]
