@@ -72,12 +72,11 @@ let fetchCities = async () => {
 
     let citiesHTML = '';
     for (let city of result) {
-        citiesHTML += `
-            <div class="city">
+        citiesHTML +=
+            `<div class="city">
                 <img src="${city.image}" alt="img${city.name.replace(/ /g, '')}">
                 <p>City: ${city.name}<br>Country: ${city.country}</p>
-            </div>
-        `;
+            </div>`;
     }
     document.getElementById('ImportantCities').innerHTML = citiesHTML;
 };
