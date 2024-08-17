@@ -1,0 +1,212 @@
+body {
+    font-family: Arial;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffffff;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.container {
+    background-color: #ffffff;
+    width: 300px;
+    height: 300px;
+    display: grid;
+    grid-template-areas:
+        "item-a item-b item-c"
+        "item-d item-e item-f"
+        "item-g item-h item-i";
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 5px;
+}
+
+.container>div {
+    background-color: #ffc7ea;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: transparent;
+    cursor: pointer;
+    transition: background-color 0.5s ease-in-out;
+}
+
+.item-a {
+    grid-area: item-a;
+}
+
+.item-b {
+    grid-area: item-b;
+}
+
+.item-c {
+    grid-area: item-c;
+}
+
+.item-d {
+    grid-area: item-d;
+}
+
+.item-e {
+    grid-area: item-e;
+}
+
+.item-f {
+    grid-area: item-f;
+}
+
+.item-g {
+    grid-area: item-g;
+}
+
+.item-h {
+    grid-area: item-h;
+}
+
+.item-i {
+    grid-area: item-i;
+}
+
+.container>div:hover {
+    background-color: #ffffff;
+}
+
+.container>div:active {
+    animation: afterClick 0.5s forwards;
+    animation-fill-mode: forwards;
+}
+
+@keyframes afterClick {
+    0% {
+        transform: scale(0);
+        color: transparent;
+    }
+
+    100% {
+        transform: scale(1);
+        color: black;
+    }
+}
+
+.dot {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.dot1 {
+    animation: dotMove1 4s linear infinite;
+}
+
+.dot2 {
+    animation: dotMove2 4s linear infinite;
+}
+
+.dot3 {
+    animation: dotMove3 4s linear infinite;
+}
+
+.dot4 {
+    animation: dotMove4 4s linear infinite;
+}
+
+@keyframes dotMove1 {
+    0% {
+        transform: translate(-150px, -115px);
+    }
+
+    25% {
+        transform: translate(150px, -115px);
+    }
+
+    50% {
+        transform: translate(150px, 185px);
+    }
+
+    75% {
+        transform: translate(-150px, 185px);
+    }
+
+    100% {
+        transform: translate(-150px, -115px);
+    }
+}
+
+@keyframes dotMove2 {
+    0% {
+        transform: translate(150px, -115px);
+    }
+
+    25% {
+        transform: translate(150px, 185px);
+    }
+
+    50% {
+        transform: translate(-150px, 185px);
+    }
+
+    75% {
+        transform: translate(-150px, -115px);
+    }
+
+    100% {
+        transform: translate(150px, -115px);
+    }
+}
+
+@keyframes dotMove3 {
+    0% {
+        transform: translate(150px, 185px);
+    }
+
+    25% {
+        transform: translate(-150px, 185px);
+    }
+
+    50% {
+        transform: translate(-150px, -115px);
+    }
+
+    75% {
+        transform: translate(150px, -115px);
+    }
+
+    100% {
+        transform: translate(150px, 185px);
+    }
+}
+
+@keyframes dotMove4 {
+    0% {
+        transform: translate(-150px, 185px);
+    }
+
+    25% {
+        transform: translate(-150px, -115px);
+    }
+
+    50% {
+        transform: translate(150px, -115px);
+    }
+
+    75% {
+        transform: translate(150px, 185px);
+    }
+
+    100% {
+        transform: translate(-150px, 185px);
+    }
+}
