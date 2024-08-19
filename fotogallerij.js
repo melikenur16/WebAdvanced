@@ -82,3 +82,59 @@ let fetchCities = async () => {
 };
 
 fetchCities();
+
+let favorite_city = "";
+
+let food_of_amsterdam = "https://vanwonderen.co/cdn/shop/files/IMG_0052_d7bdf62e-e89b-490c-8c7d-d65d13c8386a.webp?v=1706618720&width=2048";
+let food_of_berlin = "https://assets.berlin-city-tour.de/images/Berlin/Blog/In-text/_redactor/Bretzel-Berlin.png";
+let food_of_london = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRd-5LCKtwOnk1NBWhOeh5BctSGO8JWvsu_DA&s";
+let food_of_madrid = "https://fooddrinkdestinations.com/wp-content/uploads/2019/03/Pamplona-Food-guide-6.jpg";
+let food_of_zurich = "https://switzerlanding.com/wp-content/uploads/2022/11/best-fondue-zurich.png";
+
+function amsterdam() {
+    localStorage.setItem("favorite_city", "amsterdam");
+    display_local_food();
+}
+
+function berlin() {
+    localStorage.setItem("favorite_city", "berlin");
+    display_local_food();
+}
+
+function london() {
+    localStorage.setItem("favorite_city", "london");
+    display_local_food();
+}
+
+function madrid() {
+    localStorage.setItem("favorite_city", "madrid");
+    display_local_food();
+}
+
+function zurich() {
+    localStorage.setItem("favorite_city", "zurich");
+    display_local_food();
+}
+
+function display_local_food() {
+    let favorite_city = localStorage.getItem("favorite_city");
+    if (favorite_city != "") {
+        document.getElementById('local_food_text').innerHTML = "The local food of your favorite city is: ";
+        let foodImage = "";
+        if (favorite_city === "amsterdam") {
+            foodImage = food_of_amsterdam;
+        } else if (favorite_city === "berlin") {
+            foodImage = food_of_berlin;
+        } else if (favorite_city === "london") {
+            foodImage = food_of_london;
+        } else if (favorite_city === "madrid") {
+            foodImage = food_of_madrid;
+        } else if (favorite_city === "zurich") {
+            foodImage = food_of_zurich;
+        }
+        if (foodImage !== "") {
+            document.getElementById('local_food').innerHTML = `<img src="${foodImage}" alt="Food of ${favorite_city}" />`;
+        }
+    }
+}
+display_local_food();
