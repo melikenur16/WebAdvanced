@@ -96,3 +96,11 @@ CSS grid voor layout
 - **In het project Fotogalerij:**
 LocalStorage wordt gebruikt om de favoriete stad van de gebruiker op te slaan en weer te geven.(tussen lijnen 86-140 wordt localStorage.setItem gebruikt)
 
+# References
+- https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
+- https://www.shecodes.io/athena/5469-how-to-add-an-image-using-html-and-javascript
+- https://www.geeksforgeeks.org/css-cheat-sheet-a-basic-guide-to-css/
+- https://www.w3schools.com/CSS/css_grid.asp
+- https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON
+- https://www.w3schools.com/jsref/dom_obj_event.asp
+- https://www.w3schools.com/js/js_validation.asp
